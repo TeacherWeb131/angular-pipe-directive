@@ -1,0 +1,11 @@
+<input type="text" placeholder="Essai" fluo [model]="phrase" />
+<select [(ngModel)]="property">
+  <option value="prenom">Prénom</option>
+  <option value="nom">Nom</option>
+</select>
+<input type="text" placeholder="Filtrage..." [(ngModel)]="filtre" />
+<ul>
+  <li *ngFor="let eleve of eleves | filter: property:filtre" fluo="red">
+    {{ eleve.nom }} {{ eleve.prenom }}
+  </li>
+</ul>
